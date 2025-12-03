@@ -7,7 +7,8 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Updated Font Link: Loading Noto Sans for the header -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cinzel:wght@400;700&family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
 
     <style>
         /* Setting 'Inter' as the global default font */
@@ -19,12 +20,12 @@
         .font-about-panel {
             font-family: 'Cinzel', serif;
         }
-        /* Custom class for the header title using the elegant calligraphy style (Great Vibes) */
+        /* Custom class for the header title using the clear Noto Sans font */
         .font-calligraphy-title {
-            font-family: 'Great Vibes', cursive;
+            font-family: 'Noto Sans', sans-serif; /* Using Noto Sans for clarity */
             font-size: 3.5rem; 
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-            font-weight: 400; 
+            text-shadow: none; /* Removed text shadow for cleaner look */
+            font-weight: 700; /* Set to bold Noto Sans */
         }
         @media (max-width: 768px) {
             .font-calligraphy-title {
@@ -80,7 +81,7 @@
             color: #FFFFFF !important;
         }
         
-        /* Ensure Link Buttons look like buttons in High Contrast */
+        /* Ensure Link Cards look like buttons in High Contrast */
         body.high-contrast .link-card a {
             background-color: #000000 !important;
             border: 1px solid #00FFFF !important;
@@ -458,7 +459,7 @@
 
 
         <section id="aiAssistant" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">AI Query Assistant </h2>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">AI Query Assistant (Powered by Gemini)</h2>
             <div class="bg-white p-8 rounded-xl shadow-2xl border-b-4 border-govt-blue transition-colors duration-300">
                 <input type="text" id="assistantSearchInput" onkeyup="if(event.key === 'Enter') askAssistant()" placeholder="Ask any query about the Government of India, policies, history, or services..."
                         class="w-full p-4 text-lg rounded-lg border border-indigo-300 focus:border-govt-blue focus:ring-2 focus:ring-govt-blue transition duration-200 shadow-md">
@@ -557,7 +558,7 @@
         }
 
         // --- Gemini API Setup ---
-        const API_KEY = "AIzaSyCbGaE8VnVPY57B058cNKglEY1zceLPQnU"; 
+        const API_KEY = ""; 
         const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`;
         
         async function callGeminiApi(payload, retries = 0) {
@@ -678,5 +679,3 @@
     </script>
 </body>
 </html>
-
-
