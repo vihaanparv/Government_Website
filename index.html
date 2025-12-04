@@ -169,7 +169,6 @@
                     <a href="#schemes" class="text-indigo-200 hover:text-yellow-400 font-medium transition duration-150">Schemes</a>
                     <a href="#dynamicSchemeFinder" class="text-indigo-200 hover:text-yellow-400 font-medium transition duration-150">Scheme Finder</a>
                     <a href="#aiAssistant" class="text-indigo-200 hover:text-yellow-400 font-medium transition duration-150">AI Assistant</a>
-                    <a href="#policySimplifier" class="text-indigo-200 hover:text-yellow-400 font-medium transition duration-150">Policy Simplifier</a>
                 </div>
 
                 <div class="md:hidden ml-4">
@@ -428,7 +427,7 @@
 
         <!-- Dynamic Scheme Finder Section -->
         <section id="dynamicSchemeFinder" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Scheme Finder & Eligibility Check</h2>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">🧠 Dynamic Scheme Finder & Eligibility Check</h2>
             <div id="dynamicSchemeFinderContainer" class="bg-teal-50 p-8 rounded-xl shadow-2xl border-b-4 border-india-green transition-colors duration-300">
                 
                 <!-- User Profile Input -->
@@ -496,28 +495,8 @@
         </section>
 
 
-        <section id="policySimplifier" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Official Document Simplifier</h2>
-            <div class="bg-indigo-50 p-8 rounded-xl shadow-2xl border-b-4 border-govt-blue transition-colors duration-300">
-                <textarea id="complexText" rows="6" placeholder="Paste complex official text, policy jargon, or legal clauses here (max 1000 characters)..." maxlength="1000"
-                          class="w-full p-4 text-lg rounded-lg border border-indigo-300 focus:border-govt-blue focus:ring-2 focus:ring-govt-blue transition duration-200 shadow-md resize-none"></textarea>
-                
-                <div class="text-center mt-4">
-                     <button onclick="simplifyDocument()" 
-                             class="bg-govt-blue text-white py-3 px-8 rounded-lg font-semibold hover:bg-govt-blue-dark transition duration-200 shadow-lg focus:outline-none focus:ring-4 focus:ring-govt-blue flex items-center justify-center space-x-2 mx-auto">
-                        <span class="text-xl">✨</span><span>Simplify for Citizens</span>
-                    </button>
-                </div>
-
-                <div id="simplifierResults" class="mt-6 p-4 bg-white border border-indigo-200 rounded-lg min-h-20 text-gray-600">
-                    <p class="text-center font-medium">Paste text above to get a simplified explanation.</p>
-                </div>
-            </div>
-        </section>
-
-
         <section id="aiAssistant" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">AI Query Assistant</h2>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">AI Query Assistant (Powered by Gemini)</h2>
             <div class="bg-white p-8 rounded-xl shadow-2xl border-b-4 border-govt-blue transition-colors duration-300">
                 <input type="text" id="assistantSearchInput" onkeyup="if(event.key === 'Enter') askAssistant()" placeholder="Ask any query about the Government of India, policies, history, or services..."
                         class="w-full p-4 text-lg rounded-lg border border-indigo-300 focus:border-govt-blue focus:ring-2 focus:ring-govt-blue transition duration-200 shadow-md">
@@ -616,7 +595,7 @@
         }
 
         // --- Gemini API Setup ---
-        const API_KEY = "AIzaSyAXnPTuAtsVwsu7DhhmX4bw0_bso6rDTGY4"; 
+        const API_KEY = "AIzaSyAXnPTuAtsVwsu7DhhmX4bw0_bso6rDTGY"; 
         const TEXT_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`;
 
         async function callGeminiApi(url, payload, retries = 0) {
@@ -634,63 +613,6 @@
                 throw error;
             }
         }
-
-        
-        // --- Policy Simplifier ---
-
-        async function simplifyDocument() {
-            const complexText = document.getElementById('complexText').value.trim();
-            const container = document.getElementById('simplifierResults');
-            const button = document.querySelector('#policySimplifier button');
-
-            if (complexText.length < 50) {
-                container.innerHTML = `<p class="text-center text-red-600 font-medium">Please enter a substantial piece of official text (min 50 characters) to simplify.</p>`;
-                return;
-            }
-
-            button.disabled = true;
-            button.innerHTML = `
-                <div class="flex items-center space-x-2">
-                    <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div> 
-                    <span>Simplifying Policy Jargon...</span>
-                </div>`;
-
-            const systemPrompt = "You are a Government Transparency Officer. Your task is to take complex, official, or legal text and rewrite it into simple, citizen-friendly language. Use clear headings, bullet points, and an encouraging, helpful tone. Do not use jargon or highly technical terms without explanation.";
-            const userQuery = `Simplify the following text for a high school graduate: \n\n---START OF TEXT---\n${complexText}\n---END OF TEXT---`;
-
-            const payload = {
-                contents: [{ parts: [{ text: userQuery }] }],
-                systemInstruction: { parts: [{ text: systemPrompt }] },
-            };
-
-            try {
-                const result = await callGeminiApi(TEXT_API_URL, payload);
-                const simplifiedText = result.candidates?.[0]?.content?.parts?.[0]?.text || "Simplification failed. Please try a different query or shorter text.";
-                
-                // Simple Markdown to basic HTML conversion for display
-                const htmlOutput = simplifiedText
-                    .replace(/### (.*)/g, '</h3><h3 class="text-xl font-bold mt-4 mb-2 text-govt-blue">') 
-                    .replace(/## (.*)/g, '</h2><h2 class="text-2xl font-bold mt-6 mb-3 text-govt-blue">')
-                    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>') 
-                    .replace(/^- (.*)/gm, '<li class="list-disc ml-6">$1</li>') // Markdown list item for compatibility
-                    .replace(/\* (.*)/g, '<li class="list-disc ml-6">$1</li>')
-                    .replace(/\n/g, '<br>')
-                    .replace(/<br><br>/g, '<p class="mt-2 mb-2">') // Convert double line breaks to paragraphs
-                    .replace(/<br>/g, ' ')
-                    .replace(/---\n/g, '<hr class="my-4 border-indigo-200">');
-                
-                container.innerHTML = `<div class="text-gray-800 text-base leading-relaxed p-4">${htmlOutput}</div>`;
-                container.scrollTop = 0;
-
-            } catch (error) {
-                console.error("Simplification API call failed:", error);
-                container.innerHTML = `<p class="text-center text-red-600 font-medium p-4">Error: Could not connect to the Simplifier AI. Please check your network.</p>`;
-            } finally {
-                button.disabled = false;
-                button.innerHTML = '<span class="text-xl">✨</span> <span>Simplify for Citizens</span>';
-            }
-        }
-        
         // --- AI Query Assistant (Grounding) ---
 
         async function askAssistant() {
@@ -1025,11 +947,10 @@
         window.scrollToTop = scrollToTop;
         window.filterLinks = filterLinks;
         window.askAssistant = askAssistant;
-        window.simplifyDocument = simplifyDocument;
+        // window.simplifyDocument = simplifyDocument; // Removed
         window.runEligibilityCheck = runEligibilityCheck; 
         window.resetForm = resetForm;
         window.validateInput = validateInput; // Exposed for input events
     </script>
 </body>
 </html>
-
