@@ -61,7 +61,7 @@
         body.high-contrast nav,
         body.high-contrast section,
         body.high-contrast footer,
-        body.high-contrast div:not(#floatingActions):not(#accessibilityToolbar), 
+        body.high-contrast div:not(#floatingActions):not(#accessibilityToolbar):not(#favoritesListPanel), 
         body.high-contrast input,
         body.high-contrast select,
         body.high-contrast textarea {
@@ -215,10 +215,16 @@
                 
                 <div id="linksGrid" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">National Portal of India</h3>
-                            <p class="text-gray-600 text-sm mb-4">The official portal for information and services across the Union.</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-national-portal">
+                        <div class="flex justify-between items-start">
+                             <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">National Portal of India</h3>
+                                <p class="text-gray-600 text-sm mb-4">The official portal for information and services across the Union.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-national-portal', 'National Portal of India', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -226,10 +232,16 @@
                         </a>
                     </div>
                     
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Prime Minister of India (PMO)</h3>
-                            <p class="text-gray-600 text-sm mb-4">Official website of the Prime Minister's Office.</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-pmo">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Prime Minister of India (PMO)</h3>
+                                <p class="text-gray-600 text-sm mb-4">Official website of the Prime Minister's Office.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-pmo', 'Prime Minister of India (PMO)', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://www.pmindia.gov.in/en/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -237,10 +249,16 @@
                         </a>
                     </div>
 
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">President of India</h3>
-                            <p class="text-gray-600 text-sm mb-4">Official website of the President's Secretariat.</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-president">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">President of India</h3>
+                                <p class="text-gray-600 text-sm mb-4">Official website of the President's Secretariat.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-president', 'President of India', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://presidentofindia.nic.in/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -248,10 +266,16 @@
                         </a>
                     </div>
 
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Parliament of India (Sansad)</h3>
-                            <p class="text-gray-600 text-sm mb-4">Portal for legislative information (Lok Sabha and Rajya Sabha).</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-parliament">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Parliament of India (Sansad)</h3>
+                                <p class="text-gray-600 text-sm mb-4">Portal for legislative information (Lok Sabha and Rajya Sabha).</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-parliament', 'Parliament of India (Sansad)', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://sansad.in/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -259,10 +283,16 @@
                         </a>
                     </div>
 
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Supreme Court of India</h3>
-                            <p class="text-gray-600 text-sm mb-4">The apex judicial body of India.</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-supreme-court">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Supreme Court of India</h3>
+                                <p class="text-gray-600 text-sm mb-4">The apex judicial body of India.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-supreme-court', 'Supreme Court of India', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://main.sci.gov.in/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -270,10 +300,16 @@
                         </a>
                     </div>
 
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">MyGov.in</h3>
-                            <p class="text-gray-600 text-sm mb-4">Citizen engagement platform for direct participation in governance.</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-mygov">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">MyGov.in</h3>
+                                <p class="text-gray-600 text-sm mb-4">Citizen engagement platform for direct participation in governance.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-mygov', 'MyGov.in', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://www.mygov.in/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -281,10 +317,16 @@
                         </a>
                     </div>
 
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">UIDAI (Aadhaar)</h3>
-                            <p class="text-gray-600 text-sm mb-4">Portal for Aadhaar registration, download, and verification services.</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-uidai">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">UIDAI (Aadhaar)</h3>
+                                <p class="text-gray-600 text-sm mb-4">Portal for Aadhaar registration, download, and verification services.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-uidai', 'UIDAI (Aadhaar)', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://uidai.gov.in/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -292,10 +334,16 @@
                         </a>
                     </div>
 
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Income Tax Department</h3>
-                            <p class="text-gray-600 text-sm mb-4">For e-filing of returns, PAN services, and tax-related information.</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-income-tax">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Income Tax Department</h3>
+                                <p class="text-gray-600 text-sm mb-4">For e-filing of returns, PAN services, and tax-related information.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-income-tax', 'Income Tax Department', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -303,10 +351,16 @@
                         </a>
                     </div>
 
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Digital India Services</h3>
-                            <p class="text-gray-600 text-sm mb-4">Flagship program for transforming India into a digitally empowered society.</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-digital-india">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Digital India Services</h3>
+                                <p class="text-gray-600 text-sm mb-4">Flagship program for transforming India into a digitally empowered society.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-digital-india', 'Digital India Services', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://www.digitalindia.gov.in/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -314,10 +368,16 @@
                         </a>
                     </div>
 
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Incredible India (Tourism)</h3>
-                            <p class="text-gray-600 text-sm mb-4">Official website promoting tourism by the Ministry of Tourism.</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-incredible-india">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Incredible India (Tourism)</h3>
+                                <p class="text-gray-600 text-sm mb-4">Official website promoting tourism by the Ministry of Tourism.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-incredible-india', 'Incredible India (Tourism)', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://www.incredibleindia.org/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -325,10 +385,16 @@
                         </a>
                     </div>
 
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Passport Seva Portal</h3>
-                            <p class="text-gray-600 text-sm mb-4">Ministry of External Affairs' portal for passport and related services.</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-passport-seva">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Passport Seva Portal</h3>
+                                <p class="text-gray-600 text-sm mb-4">Ministry of External Affairs' portal for passport and related services.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-passport-seva', 'Passport Seva Portal', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://www.passportindia.gov.in/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -336,10 +402,16 @@
                         </a>
                     </div>
                     
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">National Scholarship Portal</h3>
-                            <p class="text-gray-600 text-sm mb-4">One-stop solution for various scholarship schemes provided by the government.</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-scholarship-portal">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">National Scholarship Portal</h3>
+                                <p class="text-gray-600 text-sm mb-4">One-stop solution for various scholarship schemes provided by the government.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-scholarship-portal', 'National Scholarship Portal', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -347,10 +419,16 @@
                         </a>
                     </div>
 
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Make in India</h3>
-                            <p class="text-gray-600 text-sm mb-4">Initiative to encourage domestic and international companies to manufacture in India.</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-make-in-india">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">Make in India</h3>
+                                <p class="text-gray-600 text-sm mb-4">Initiative to encourage domestic and international companies to manufacture in India.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-make-in-india', 'Make in India', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://www.makeinindia.com/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -358,10 +436,16 @@
                         </a>
                     </div>
 
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">e-Courts Services</h3>
-                            <p class="text-gray-600 text-sm mb-4">Information on judicial services, case status, and cause lists across courts.</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-e-courts">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">e-Courts Services</h3>
+                                <p class="text-gray-600 text-sm mb-4">Information on judicial services, case status, and cause lists across courts.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-e-courts', 'e-Courts Services', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://ecourts.gov.in/ecourts_home/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -369,10 +453,16 @@
                         </a>
                     </div>
                     
-                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="link-name text-xl text-gray-900 font-bold mb-1">MGNREGA Portal (NREGA)</h3>
-                            <p class="text-gray-600 text-sm mb-4">Official website for the Mahatma Gandhi National Rural Employment Guarantee Act.</p>
+                    <div class="link-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-govt-blue hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="link-mgnrega">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="link-name text-xl text-gray-900 font-bold mb-1">MGNREGA Portal (NREGA)</h3>
+                                <p class="text-gray-600 text-sm mb-4">Official website for the Mahatma Gandhi National Rural Employment Guarantee Act.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('link-mgnrega', 'MGNREGA Portal (NREGA)', 'link')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <a href="https://nrega.nic.in/" target="_blank" rel="noopener noreferrer" 
                             class="mt-2 text-center bg-saffron-btn text-white py-2 px-4 rounded-lg hover:bg-saffron-dark transition duration-150 shadow-md font-semibold">
@@ -390,10 +480,16 @@
                 <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Scheme Card 1: PM-JAY -->
-                     <div class="scheme-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-saffron-btn hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl text-gray-900 font-bold mb-2">Pradhan Mantri Jan Arogya Yojana (PM-JAY)</h3>
-                            <p class="scheme-desc text-gray-600 text-sm mb-4">World's largest health insurance/assurance scheme fully financed by the government.</p>
+                     <div class="scheme-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-saffron-btn hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="scheme-pm-jay">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl text-gray-900 font-bold mb-2">Pradhan Mantri Jan Arogya Yojana (PM-JAY)</h3>
+                                <p class="scheme-desc text-gray-600 text-sm mb-4">World's largest health insurance/assurance scheme fully financed by the government.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('scheme-pm-jay', 'Pradhan Mantri Jan Arogya Yojana', 'scheme')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <div class="flex flex-col space-y-2">
                              <a href="https://pmjay.gov.in/" target="_blank" rel="noopener noreferrer" class="mt-2 text-center text-saffron-btn font-bold hover:text-orange-700 transition duration-150 border border-saffron-btn py-2 rounded-lg hover:bg-orange-50">View Details</a>
@@ -401,10 +497,16 @@
                     </div>
 
                     <!-- Scheme Card 2: Awas Yojana -->
-                    <div class="scheme-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-saffron-btn hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl text-gray-900 font-bold mb-2">Pradhan Mantri Awas Yojana</h3>
-                            <p class="scheme-desc text-gray-600 text-sm mb-4">Mission to provide affordable housing to the urban and rural poor.</p>
+                    <div class="scheme-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-saffron-btn hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="scheme-awas-yojana">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl text-gray-900 font-bold mb-2">Pradhan Mantri Awas Yojana</h3>
+                                <p class="scheme-desc text-gray-600 text-sm mb-4">Mission to provide affordable housing to the urban and rural poor.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('scheme-awas-yojana', 'Pradhan Mantri Awas Yojana', 'scheme')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <div class="flex flex-col space-y-2">
                             <a href="https://pmaymis.gov.in/" target="_blank" rel="noopener noreferrer" class="mt-2 text-center text-saffron-btn font-bold hover:text-orange-700 transition duration-150 border border-saffron-btn py-2 rounded-lg hover:bg-orange-50">View Details</a>
@@ -412,10 +514,16 @@
                     </div>
                     
                     <!-- Scheme Card 3: Swachh Bharat -->
-                     <div class="scheme-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-saffron-btn hover:shadow-2xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-xl text-gray-900 font-bold mb-2">Swachh Bharat Abhiyan</h3>
-                            <p class="scheme-desc text-gray-600 text-sm mb-4">A nation-wide campaign to clean up the streets, roads and infrastructure.</p>
+                     <div class="scheme-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-saffron-btn hover:shadow-2xl transition duration-300 flex flex-col justify-between" data-item-id="scheme-swachh-bharat">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl text-gray-900 font-bold mb-2">Swachh Bharat Abhiyan</h3>
+                                <p class="scheme-desc text-gray-600 text-sm mb-4">A nation-wide campaign to clean up the streets, roads and infrastructure.</p>
+                            </div>
+                            <button class="favorite-btn p-2 rounded-full transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                onclick="toggleFavorite('scheme-swachh-bharat', 'Swachh Bharat Abhiyan', 'scheme')"
+                                aria-label="Toggle favorite status" aria-checked="false">
+                            </button>
                         </div>
                         <div class="flex flex-col space-y-2">
                             <a href="https://swachhbharatmission.gov.in/" target="_blank" rel="noopener noreferrer" class="mt-2 text-center text-saffron-btn font-bold hover:text-orange-700 transition duration-150 border border-saffron-btn py-2 rounded-lg hover:bg-orange-50">View Details</a>
@@ -518,7 +626,7 @@
 
     <footer class="bg-indigo-900 text-indigo-200 p-10 mt-12 transition-colors duration-300">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-            <!-- Footer Content (Same as before) -->
+            <!-- Footer Content -->
              <div>
                 <h3 class="text-xl font-bold text-white mb-4">Union Government</h3>
                 <p class="text-sm">
@@ -544,10 +652,26 @@
         </div>
         <div class="border-t border-indigo-700 pt-6 mt-6 text-center text-sm">
             <p>&copy; 2025 Government of INDIA. All rights reserved.</p>
+            <p class="mt-2 text-xs text-indigo-400">
+                <span class="font-bold">Current User ID:</span> <span id="userIdDisplay" class="font-mono text-xs">Awaiting Auth...</span>
+            </p>
         </div>
     </footer>
 
     <div id="floatingActions" class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-3">
+        <!-- Favorites List Panel -->
+        <div id="favoritesListPanel" class="fixed bottom-24 right-20 w-80 max-h-[70vh] bg-white rounded-xl shadow-2xl p-4 border border-indigo-200 hidden overflow-y-auto z-40 transition-opacity duration-300 transform opacity-0">
+            <h3 class="text-xl font-bold text-govt-blue mb-3 border-b pb-2 flex items-center justify-between">
+                My Favorites
+                <button onclick="toggleFavoritesModal()" class="text-gray-400 hover:text-gray-700">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </h3>
+            <div id="favoritesContent" class="space-y-3">
+                <!-- Favorites list will be rendered here -->
+            </div>
+        </div>
+
         <button id="accessibilityToggleBtn" onclick="toggleAccessibilityToolbar()" title="Toggle Accessibility Tools"
             class="bg-govt-blue text-white font-bold p-3 rounded-full shadow-2xl hover:bg-govt-blue-dark transition duration-300 focus:outline-none flex items-center justify-center">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5zm-2 15h4v-3h-4v3zm2 5c-2.76 0-5-2.24-5-5h2c0 1.66 1.34 3 3 3s3-1.34 3-3h2c0 2.76-2.24 5-5 5z"/></svg>
@@ -559,13 +683,228 @@
             <button onclick="toggleContrast()" class="bg-gray-800 text-white font-bold h-10 w-10 rounded-full shadow-md hover:bg-black flex items-center justify-center text-xl border border-gray-600">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
             </button>
+            
+            <!-- NEW: Favorites Button -->
+            <button id="favoritesBtn" onclick="toggleFavoritesModal()" 
+                class="bg-red-500 text-white font-bold h-10 w-10 rounded-full shadow-md hover:bg-red-600 flex items-center justify-center text-xl">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+
         </div>
         <button id="scrollToTopBtn" onclick="scrollToTop()" class="bg-blue-800 text-white p-3 rounded-full shadow-2xl hover:bg-blue-900 hidden">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
         </button>
     </div>
 
-    <script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, doc, setDoc, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        // import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        // setLogLevel('debug'); // Uncomment for debugging
+
+        // --- Global Variables (Provided by Canvas) ---
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let db;
+        let auth;
+        let userId = null;
+        let isAuthReady = false;
+        // State to hold favorited item details: { itemId: { docId: string, name: string, type: string } }
+        let favorites = {}; 
+
+        // --- FIREBASE INITIALIZATION & AUTHENTICATION ---
+        async function initializeFirebase() {
+            try {
+                if (Object.keys(firebaseConfig).length === 0) {
+                    console.error("Firebase config is missing.");
+                    return;
+                }
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+
+                // Check for custom token and sign in
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        userId = user.uid;
+                        document.getElementById('userIdDisplay').textContent = userId;
+                        isAuthReady = true;
+                        console.log("User signed in. UID:", userId);
+                        fetchFavorites();
+                    } else {
+                        // This case handles sign out or initial anonymous fallback if token failed
+                        userId = auth.currentUser?.uid || crypto.randomUUID(); 
+                        document.getElementById('userIdDisplay').textContent = userId + " (Anon)";
+                        isAuthReady = true; 
+                        console.log("User not authenticated, using anonymous/temporary ID:", userId);
+                        fetchFavorites();
+                    }
+                });
+            } catch (error) {
+                console.error("Firebase initialization or sign-in failed:", error);
+            }
+        }
+
+        // --- FIRESTORE FAVORITES MANAGEMENT ---
+        const FAV_COLLECTION_PATH = (uid) => `artifacts/${appId}/users/${uid}/favorites`;
+
+        function updateFavoriteIcons() {
+            // Update link cards and scheme cards
+            document.querySelectorAll('.link-card, .scheme-card').forEach(card => {
+                const itemId = card.getAttribute('data-item-id');
+                const favButton = card.querySelector('.favorite-btn');
+                if (favButton) {
+                    // Check if the key exists in the 'favorites' object
+                    const isFavorite = favorites.hasOwnProperty(itemId); 
+                    favButton.innerHTML = isFavorite 
+                        ? `<svg class="w-5 h-5 text-red-500 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`
+                        : `<svg class="w-5 h-5 text-gray-400 hover:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-.318-.318a4.5 4.5 0 00-6.364 0z"/></svg>`;
+                    favButton.setAttribute('aria-checked', isFavorite);
+                }
+            });
+        }
+
+        function fetchFavorites() {
+            if (!isAuthReady || !userId) return;
+
+            const favsRef = collection(db, FAV_COLLECTION_PATH(userId));
+            
+            // Set up real-time listener for user's favorites
+            onSnapshot(favsRef, (snapshot) => {
+                favorites = {}; // Reset state
+                snapshot.docs.forEach(doc => {
+                    const data = doc.data();
+                    // Store the item ID and the Firestore Document ID, plus name/type for display
+                    if (data.itemId) {
+                        favorites[data.itemId] = { 
+                            docId: doc.id,
+                            name: data.itemName,
+                            type: data.itemType // 'link' or 'scheme'
+                        }; 
+                    }
+                });
+                console.log("Favorites loaded:", Object.keys(favorites).length, "items.");
+                updateFavoriteIcons();
+                // If the modal is open, re-render the list immediately
+                if (document.getElementById('favoritesListPanel').classList.contains('opacity-100')) {
+                     renderFavoritesList();
+                }
+
+            }, (error) => {
+                console.error("Error fetching favorites:", error);
+            });
+        }
+
+        async function toggleFavorite(itemId, itemName, itemType) {
+            if (!userId || !db) {
+                // Use a custom modal/message box instead of alert()
+                const message = "Authentication is not yet ready. Please wait a moment.";
+                console.error(message);
+                const resultsDiv = document.getElementById('assistantResults');
+                resultsDiv.innerHTML = `<p class="text-center text-red-600 font-medium p-2">${message}</p>`;
+                return;
+            }
+            
+            const favsRef = collection(db, FAV_COLLECTION_PATH(userId));
+            const favItem = favorites[itemId];
+            
+            try {
+                if (favItem) {
+                    // Already favorited, delete it
+                    const docRef = doc(db, FAV_COLLECTION_PATH(userId), favItem.docId);
+                    await deleteDoc(docRef);
+                    // The 'favorites' object will be updated by the onSnapshot listener
+                } else {
+                    // Not favorited, add it
+                    await setDoc(doc(favsRef), {
+                        itemId: itemId,
+                        itemName: itemName,
+                        itemType: itemType, // 'link' or 'scheme'
+                        createdAt: new Date().toISOString()
+                    });
+                    // The 'favorites' object will be updated by the onSnapshot listener
+                }
+                updateFavoriteIcons(); // Immediate UI feedback (optimistic update)
+            } catch (error) {
+                console.error("Error toggling favorite status:", error);
+            }
+        }
+        
+        // --- Favorites Modal/Panel Logic ---
+
+        function toggleFavoritesModal() {
+            const panel = document.getElementById('favoritesListPanel');
+            const isOpen = panel.classList.contains('opacity-100');
+
+            if (isOpen) {
+                panel.classList.add('opacity-0');
+                panel.classList.add('hidden');
+                panel.classList.remove('opacity-100');
+            } else {
+                renderFavoritesList();
+                panel.classList.remove('hidden');
+                // Use a short timeout to trigger transition
+                setTimeout(() => {
+                    panel.classList.add('opacity-100');
+                    panel.classList.remove('opacity-0');
+                }, 10);
+            }
+        }
+
+        function renderFavoritesList() {
+            const contentDiv = document.getElementById('favoritesContent');
+            const favKeys = Object.keys(favorites);
+            
+            if (favKeys.length === 0) {
+                contentDiv.innerHTML = `<p class="text-center text-gray-500 italic p-3">You haven't favorited any items yet.</p>`;
+                return;
+            }
+
+            let html = '';
+            
+            // Sort by type (Links first, then Schemes)
+            const sortedFavorites = favKeys
+                .map(key => ({ id: key, ...favorites[key] }))
+                .sort((a, b) => {
+                    if (a.type === 'link' && b.type === 'scheme') return -1;
+                    if (a.type === 'scheme' && b.type === 'link') return 1;
+                    return a.name.localeCompare(b.name);
+                });
+
+
+            sortedFavorites.forEach(fav => {
+                const isLink = fav.type === 'link';
+                const tagColor = isLink ? 'bg-indigo-100 text-indigo-700' : 'bg-orange-100 text-orange-700';
+
+                html += `
+                    <div class="border border-gray-200 p-3 rounded-lg flex flex-col hover:bg-gray-50 transition duration-150">
+                        <div class="flex justify-between items-start">
+                            <span class="font-medium text-gray-800">${fav.name}</span>
+                            <span class="text-xs font-semibold ${tagColor} px-2 py-0.5 rounded-full ml-2 uppercase">${fav.type}</span>
+                        </div>
+                        <div class="mt-2 text-right">
+                            <button onclick="toggleFavorite('${fav.id}', '${fav.name}', '${fav.type}')" 
+                                class="text-sm text-red-500 hover:text-red-700 focus:outline-none focus:ring-1 focus:ring-red-300 rounded-md">
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            contentDiv.innerHTML = html;
+        }
+
+
         // --- Accessibility & UI State ---
         const ROOT_ELEMENT = document.documentElement;
         let currentFontSize = 16;
@@ -595,7 +934,7 @@
         }
 
         // --- Gemini API Setup ---
-        const API_KEY = "AIzaSyBeJ0iZ5-DgXv8QXKeIX6PlRKxjNfPBqrQ"; 
+        const API_KEY = ""; 
         const TEXT_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`;
 
         async function callGeminiApi(url, payload, retries = 0) {
@@ -613,6 +952,8 @@
                 throw error;
             }
         }
+
+        
         // --- AI Query Assistant (Grounding) ---
 
         async function askAssistant() {
@@ -934,10 +1275,11 @@
         }
         
         // Initialization on window load
-        window.onload = function() {
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeFirebase();
             renderLocationOptions();
             validateInput();
-        };
+        });
 
 
         // Expose functions to the global scope for HTML event handlers
@@ -947,11 +1289,11 @@
         window.scrollToTop = scrollToTop;
         window.filterLinks = filterLinks;
         window.askAssistant = askAssistant;
-        // window.simplifyDocument = simplifyDocument; // Removed
         window.runEligibilityCheck = runEligibilityCheck; 
         window.resetForm = resetForm;
-        window.validateInput = validateInput; // Exposed for input events
+        window.validateInput = validateInput;
+        window.toggleFavorite = toggleFavorite; // Exposed for favorite button handler
+        window.toggleFavoritesModal = toggleFavoritesModal; // NEW: Exposed for favorites modal
     </script>
 </body>
 </html>
-
